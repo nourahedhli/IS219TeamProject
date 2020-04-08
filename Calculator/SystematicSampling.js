@@ -1,28 +1,25 @@
 const data = require('../Calculator/randomeData');
 
-function simpleRandomSample(x){
-
+function systematicSampling(x){
     let dataset = [];
+
     for (i = 0; i < x; i++){
         let y = data.randomN_numbers_withSeed();
         for (element in y){
-            if (dataset.length <= x) {
+            if (element % x ){
                 dataset.push(element);
+
             }
             else{
-                break;
+                continue;
             }
         }
 
-        if (dataset == x){
-            break;
-        }
-
-        }
-        return dataset;
     }
 
+    return dataset;
+
+}
 
 
-
-module.exports = simpleRa ndomSample;
+module.exports = systematicSampling;
